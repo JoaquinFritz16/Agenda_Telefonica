@@ -1,0 +1,9 @@
+.Form-content{
+    padding: 1rem;
+    border: 1px solid #ccc;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #a0aab3, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #a0aab3, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
