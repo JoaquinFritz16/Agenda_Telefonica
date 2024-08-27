@@ -1,12 +1,16 @@
-import NavBar from "./NavBar";
+import SearchBar from "./SearchBar";
 import './Header.css'
-function Header(){
+function Header({search, setSearch, setFilteredPeople, people}){
     return(
         <>
         <header className='flex-container'>
             <img src="eye.png" alt="logo"  className='logo'/>
 
-            <NavBar />
+            <SearchBar
+            search={search}
+            setSearch={setSearch}
+            setFilteredPeople={setFilteredPeople}
+            people={people} />
         </header>
         </>
     )

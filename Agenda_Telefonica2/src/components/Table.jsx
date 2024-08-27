@@ -3,7 +3,8 @@ function Table({people, onDelete}){
     return(
         <>
         <table>
-            <colgroup span="6"></colgroup>
+            <colgroup span="5" className="columns"></colgroup>
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>First Name</th>
@@ -12,19 +13,22 @@ function Table({people, onDelete}){
                 <th>Tel</th>
                 <th>Actions</th>
             </tr>
-            <tr>
+            </thead>
+            <tbody>
+            
                 {people.map((person)=>(
                     <tr key={person.id}>
-                        <th>{person.id}</th>
-                        <th>{person.name}</th>
-                        <th>{person.surname}</th>
-                        <th>{person.age}</th>
-                        <th>{person.numTel}</th>
-                        <th><Actions personId={person.id} onDelete={onDelete}></Actions></th>
+                        <td>{person.id}</td>
+                        <td>{person.name}</td>
+                        <td>{person.surname}</td>
+                        <td>{person.age}</td>
+                        <td>{person.numTel}</td>
+                        <td><Actions personId={person.id} onDelete={onDelete}></Actions></td>
                     </tr>
                 ))
                 }
-            </tr>
+            
+            </tbody>
         </table>
         </>
     )
