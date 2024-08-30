@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react";
+import { useState} from "react";
 import { toast } from "react-toastify";
 import './Inputs.css'
 function Inputs({addPeople}){
@@ -35,7 +35,7 @@ function Inputs({addPeople}){
     }
     const validationAge = (age) => {
         if(age < 0 || age > 120){
-            return "La edad debe ser un valor entre 0 y 100"
+            return "La edad debe ser un valor entre 0 y 120"
         }
     }
     const validationNumTel = (numTel) => {

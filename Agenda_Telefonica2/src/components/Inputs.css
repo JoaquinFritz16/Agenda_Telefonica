@@ -1,9 +1,29 @@
-.Form-content{
-    padding: 1rem;
+.Form-content {
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 2rem auto;
+    max-width: 500px;
+    background-color: rgb(219, 221, 224);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.Form-content label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #241e1e;
+}
+.Form-content input[type="text"], 
+.Form-content input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    background: #bdc3c7;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #a0aab3, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #a0aab3, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #ffffffca;
+    transition: border-color 0.3s ease-in-out;
+}
+.Form-content button:hover {
+    background-color: #0056b3;
 }

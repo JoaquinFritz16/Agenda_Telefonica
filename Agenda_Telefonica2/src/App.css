@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(240, 242, 245);
+    color: rgb(33, 37, 41);
+    font-family: 'Arial', sans-serif;
+}
+h1 {
+    color: rgb(52, 58, 64);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 5vmin;
+    align-items: center;
+}

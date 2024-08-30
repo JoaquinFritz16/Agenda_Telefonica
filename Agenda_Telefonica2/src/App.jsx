@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Inputs from './components/Inputs';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 function App() {
   const db = `http://localhost:3000`;
   const [people, setPeople] = useState([]);
@@ -26,18 +27,21 @@ function App() {
   }
   const addPeople = (person) => {
     axios.post(`${db}/people`, person)
-    .then(res => {setPeople([...people, res.data])
-      setFilteredPeople([...people, res.data])})
+    .then(res => {
+      setPeople([...people, res.data])
+      setFilteredPeople([...people, res.data])
+    })
     .catch(error=>setError(error));
   }
   return (
     <>
     <Header search={search} setSearch={setSearch}
      people={people} setFilteredPeople={setFilteredPeople} />
-      <h1>Agenda Telefonica</h1>
+      <div className='container'><h1>Agenda Telefonica</h1>
       {error && <p>{error.message}</p>}
       <Inputs addPeople={addPeople} />
       <Table people={filteredPeople} onDelete={handleDelete}/>
+      </div>
       <Footer />
       <ToastContainer></ToastContainer>
     </>

@@ -16,27 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "people": [
-    {
-      "id": "7901",
-      "name": "Jose",
-      "surname": "Zida",
-      "age": 17,
-      "numTel": "323-232 3213"
-    },
-    {
-      "id": "de07",
-      "name": "Jeffry",
-      "surname": "dahmer",
-      "age": 53,
-      "numTel": "911-233 0341"
-    },
-    {
-      "id": "ef50",
-      "name": "Lionel",
-      "surname": "Messi",
-      "age": 37,
-      "numTel": "331-653 2562"
-    }
-  ]
+  "people": []
 }
