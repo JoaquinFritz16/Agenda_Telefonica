@@ -1,6 +1,8 @@
 import { useState} from "react";
 import { toast } from "react-toastify";
 import './Inputs.css'
+const testName = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/
+const testNumTel= /^\d{3}-\d{3} \d{4}$/
 function Inputs({addPeople}){
     const [datos, setDatos] = useState({
         name: '',
@@ -18,7 +20,7 @@ function Inputs({addPeople}){
     const validationName = (name) => {
         if(name.trim() === ""){
             return "El nombre no puede estar vacio"
-        } else if (!/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(name)){
+        } else if (!testName.test(name)){
             return "El nombre solo puede contener letras validas"
         } else if(name.length < 3) {
             return "El nombre debe tener al menos 3 caracteres"
@@ -27,7 +29,7 @@ function Inputs({addPeople}){
     const validationSurname = (surname) => {
         if(surname.trim() === ""){
             return "El apellido no puede estar vacio"
-            } else if (!/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(surname)){
+            } else if (!testName.test(surname)){
                 return "El apellido solo puede contener letras validas"
             } else if(surname.length < 2){
                 return "El apellido debe tener al menos 2 caracteres"
@@ -39,7 +41,7 @@ function Inputs({addPeople}){
         }
     }
     const validationNumTel = (numTel) => {
-        if(!/^\d{3}-\d{3} \d{4}$/.test(numTel)){
+        if(!testNumTel.test(numTel)){
             return "El numero de telefono debe tener el siguiente formato XXX-XXX XXXX"
         }
     }
@@ -69,7 +71,7 @@ function Inputs({addPeople}){
             <input onChange={handleChange} id="age"    value={datos.age}  type="number"></input>
             <label>Enter a telephone number:</label>
             <input onChange={handleChange} id="numTel" value={datos.numTel}  placeholder="xxx-xxx xxxx"  type="text"></input>
-            <button type="submit">Agregar</button>
+            <button type="submit">Add</button>
 
         </form>
     )

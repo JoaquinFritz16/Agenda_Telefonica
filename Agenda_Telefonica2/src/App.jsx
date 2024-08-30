@@ -26,12 +26,19 @@ function App() {
     setFilteredPeople(people.filter(person=> person.id !== personId))
   }
   const addPeople = (person) => {
-    axios.post(`${db}/people`, person)
+    const newId=Plusid()
+    const newPerson = {...person, newId}
+    axios.post(`${db}/people`, newPerson)
     .then(res => {
       setPeople([...people, res.data])
       setFilteredPeople([...people, res.data])
     })
     .catch(error=>setError(error));
+  }
+  const Plusid = ()  => {
+    const maxId = Math.max(people.id)
+    const newId = maxId + 1
+    return newId
   }
   return (
     <>
